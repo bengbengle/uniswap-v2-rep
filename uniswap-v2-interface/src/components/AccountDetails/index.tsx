@@ -12,11 +12,11 @@ import Transaction from './Transaction'
 import { SUPPORTED_WALLETS } from '../../constants'
 import { ReactComponent as Close } from '../../assets/images/x.svg'
 import { getEtherscanLink } from '../../utils'
-import { injected, walletconnect, walletlink, fortmatic, portis } from '../../connectors'
+import { injected, walletconnect, walletlink } from '../../connectors'
 import CoinbaseWalletIcon from '../../assets/images/coinbaseWalletIcon.svg'
 import WalletConnectIcon from '../../assets/images/walletConnectIcon.svg'
-import FortmaticIcon from '../../assets/images/fortmaticIcon.png'
-import PortisIcon from '../../assets/images/portisIcon.png'
+// import FortmaticIcon from '../../assets/images/fortmaticIcon.png'
+// import PortisIcon from '../../assets/images/portisIcon.png'
 import Identicon from '../Identicon'
 import { ButtonSecondary } from '../Button'
 import { ExternalLink as LinkIcon } from 'react-feather'
@@ -196,9 +196,9 @@ const WalletAction = styled(ButtonSecondary)`
   }
 `
 
-const MainWalletAction = styled(WalletAction)`
-  color: ${({ theme }) => theme.primary1};
-`
+// const MainWalletAction = styled(WalletAction)`
+//   color: ${({ theme }) => theme.primary1};
+// `
 
 function renderTransactions(transactions: string[]) {
   return (
@@ -260,27 +260,27 @@ export default function AccountDetails({
           <img src={CoinbaseWalletIcon} alt={'coinbase wallet logo'} />
         </IconWrapper>
       )
-    } else if (connector === fortmatic) {
-      return (
-        <IconWrapper size={16}>
-          <img src={FortmaticIcon} alt={'fortmatic logo'} />
-        </IconWrapper>
-      )
-    } else if (connector === portis) {
-      return (
-        <>
-          <IconWrapper size={16}>
-            <img src={PortisIcon} alt={'portis logo'} />
-            <MainWalletAction
-              onClick={() => {
-                portis.portis.showPortis()
-              }}
-            >
-              Show Portis
-            </MainWalletAction>
-          </IconWrapper>
-        </>
-      )
+    // } else if (connector === fortmatic) {
+    //   return (
+    //     <IconWrapper size={16}>
+    //       <img src={FortmaticIcon} alt={'fortmatic logo'} />
+    //     </IconWrapper>
+    //   )
+    // } else if (connector === portis) {
+    //   return (
+    //     <>
+    //       <IconWrapper size={16}>
+    //         <img src={PortisIcon} alt={'portis logo'} />
+    //         <MainWalletAction
+    //           onClick={() => {
+    //             portis.portis.showPortis()
+    //           }}
+    //         >
+    //           Show Portis
+    //         </MainWalletAction>
+    //       </IconWrapper>
+    //     </>
+    //   )
     }
     return null
   }

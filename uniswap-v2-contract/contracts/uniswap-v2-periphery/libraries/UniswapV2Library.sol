@@ -4,7 +4,7 @@ import '../../uniswap-v2-core/interfaces/IUniswapV2Pair.sol';
 import "./SafeMath.sol";
 
 library UniswapV2Library {
-    using SafeMath for uint;
+    using SafeMathUniswap for uint;
 
     // returns sorted token addresses, used to handle return values from pairs sorted in this order
     function sortTokens(address tokenA, address tokenB) internal pure returns (address token0, address token1) {
@@ -20,7 +20,7 @@ library UniswapV2Library {
                 hex'ff',
                 factory,
                 keccak256(abi.encodePacked(token0, token1)),
-                hex'2bbf561059bfad76dd3e7f5e7e45d68e76db16d20d00dc76889202628a6417d9' // init code hash
+                hex'dd86304484c928c3cb1abad5394d957e76d328f06ea2f37042528013c02e9a49' // pairCodeHash
             ))));
     }
 

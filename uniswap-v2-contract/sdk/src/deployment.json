@@ -1,28 +1,28 @@
 {
-  "4": {
+  "97": {
     "weth": {
-      "proxyAddress": "0x2b48362A29bC2A89813ec3f0baC402f62d8A7acc",
-      "implAddress": "0x2b48362A29bC2A89813ec3f0baC402f62d8A7acc",
+      "proxyAddress": "0xae13d989daC2f0dEbFf460aC112a837C89BAa7cd",
+      "implAddress": "0xae13d989daC2f0dEbFf460aC112a837C89BAa7cd",
       "version": "1.0.0",
       "contract": "WETH9",
-      "operator": "0x7D35f734Ff3A01C6126b8CE1a79538A1E47b81dd",
-      "fromBlock": 10158892
+      "operator": "0x8368beeeedec26444e7393a6a572137c1d2b9b8d",
+      "fromBlock": 16719419
     },
     "factory": {
-      "proxyAddress": "0x14F0D30A985c71d79D3a8d356bD2018316d6E493",
-      "implAddress": "0x14F0D30A985c71d79D3a8d356bD2018316d6E493",
+      "proxyAddress": "0xAEE91e0449058a111b8eBd289152a7767B4411Cf",
+      "implAddress": "0xAEE91e0449058a111b8eBd289152a7767B4411Cf",
       "version": "1.0.0",
       "contract": "UniswapV2Factory",
-      "operator": "0x7D35f734Ff3A01C6126b8CE1a79538A1E47b81dd",
-      "fromBlock": 10158893
+      "operator": "0x8368beeeedec26444e7393a6a572137c1d2b9b8d",
+      "fromBlock": 16719531
     },
     "router": {
-      "proxyAddress": "0x1E6ad031380bfBe3dcFAB06750AbeA69f2F05D7F",
-      "implAddress": "0x1E6ad031380bfBe3dcFAB06750AbeA69f2F05D7F",
+      "proxyAddress": "0x96f6E2E22a897fBc3995B7258335205E01FB08E4",
+      "implAddress": "0x96f6E2E22a897fBc3995B7258335205E01FB08E4",
       "version": "1.0.0",
       "contract": "UniswapV2Router02",
-      "operator": "0x7D35f734Ff3A01C6126b8CE1a79538A1E47b81dd",
-      "fromBlock": 10158894
+      "operator": "0x8368beeeedec26444e7393a6a572137c1d2b9b8d",
+      "fromBlock": 16719544
     }
   }
 }

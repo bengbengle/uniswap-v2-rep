@@ -2,9 +2,9 @@ import { ChainId, JSBI, Percent, Token, WETH } from '@benboba790111/uniswap-v2-s
 import { AbstractConnector } from '@web3-react/abstract-connector'
 import { DeploymentInfo } from '@benboba790111/uniswap-v2-sdk'
 
-import { fortmatic, injected, portis, walletconnect, walletlink } from '../connectors'
+import { injected, walletconnect, walletlink } from '../connectors'
 
-export const ROUTER_ADDRESS = DeploymentInfo[4].router.proxyAddress;
+export const ROUTER_ADDRESS = DeploymentInfo[ChainId.BSC_TESTNET].router.proxyAddress;
 
 // a list of tokens by chain
 type ChainTokenList = {
@@ -23,7 +23,8 @@ const WETH_ONLY: ChainTokenList = {
   [ChainId.ROPSTEN]: [WETH[ChainId.ROPSTEN]],
   [ChainId.RINKEBY]: [WETH[ChainId.RINKEBY]],
   [ChainId.GÖRLI]: [WETH[ChainId.GÖRLI]],
-  [ChainId.KOVAN]: [WETH[ChainId.KOVAN]]
+  [ChainId.KOVAN]: [WETH[ChainId.KOVAN]],
+  [ChainId.BSC_TESTNET]: [WETH[ChainId.BSC_TESTNET]]
 }
 
 // used to construct intermediary pairs for trading
@@ -121,24 +122,24 @@ export const SUPPORTED_WALLETS: { [key: string]: WalletInfo } = {
     mobile: true,
     mobileOnly: true
   },
-  FORTMATIC: {
-    connector: fortmatic,
-    name: 'Fortmatic',
-    iconName: 'fortmaticIcon.png',
-    description: 'Login using Fortmatic hosted wallet',
-    href: null,
-    color: '#6748FF',
-    mobile: true
-  },
-  Portis: {
-    connector: portis,
-    name: 'Portis',
-    iconName: 'portisIcon.png',
-    description: 'Login using Portis hosted wallet',
-    href: null,
-    color: '#4A6C9B',
-    mobile: true
-  }
+  // FORTMATIC: {
+  //   connector: fortmatic,
+  //   name: 'Fortmatic',
+  //   iconName: 'fortmaticIcon.png',
+  //   description: 'Login using Fortmatic hosted wallet',
+  //   href: null,
+  //   color: '#6748FF',
+  //   mobile: true
+  // },
+  // Portis: {
+  //   connector: portis,
+  //   name: 'Portis',
+  //   iconName: 'portisIcon.png',
+  //   description: 'Login using Portis hosted wallet',
+  //   href: null,
+  //   color: '#4A6C9B',
+  //   mobile: true
+  // }
 }
 
 export const NetworkContextName = 'NETWORK'

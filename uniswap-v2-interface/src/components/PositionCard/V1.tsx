@@ -1,6 +1,6 @@
 import React, { useContext } from 'react'
 import { Link, RouteComponentProps, withRouter } from 'react-router-dom'
-import { Token, TokenAmount, WETH } from '@benboba790111/uniswap-v2-sdk'
+import { Token, WETH } from '@benboba790111/uniswap-v2-sdk'
 
 import { Text } from 'rebass'
 import { AutoColumn } from '../Column'
@@ -13,7 +13,7 @@ import { ThemeContext } from 'styled-components'
 
 interface PositionCardProps extends RouteComponentProps<{}> {
   token: Token
-  V1LiquidityBalance: TokenAmount
+  V1LiquidityBalance: any
 }
 
 function V1PositionCard({ token, V1LiquidityBalance }: PositionCardProps) {
