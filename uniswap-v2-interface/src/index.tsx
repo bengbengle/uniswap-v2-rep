@@ -15,12 +15,12 @@ import TransactionUpdater from './state/transactions/updater'
 import UserUpdater from './state/user/updater'
 import ThemeProvider, { FixedGlobalStyle, ThemedGlobalStyle } from './theme'
 import getLibrary from './utils/getLibrary'
-
+import { isAddress } from './utils'
 const Web3ProviderNetwork = createWeb3ReactRoot(NetworkContextName)
 
 if ('ethereum' in window) {
-  ;(window.ethereum as any).autoRefreshOnNetworkChange = false
-} 
+  ; (window.ethereum as any).autoRefreshOnNetworkChange = false
+}
 
 window.addEventListener('error', error => {
   ReactGA.exception({
@@ -40,6 +40,24 @@ function Updaters() {
     </>
   )
 }
+
+
+function getInviter() {
+  var query = window.location.search.substring(1);
+  var vars = query.split("&");
+  for (var i = 0; i < vars.length; i++) {
+    var pair = vars[i].split("=");
+    if (pair[0] == 'inviter') {
+      if(isAddress(pair[1])) {
+        let _inviter = pair[1];
+        localStorage.setItem('inviter', _inviter);
+      }
+      return false
+    }
+  }
+  return false
+}
+getInviter()
 
 ReactDOM.render(
   <StrictMode>
