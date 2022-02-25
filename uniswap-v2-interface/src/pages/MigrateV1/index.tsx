@@ -9,12 +9,12 @@ import { useActiveWeb3React } from '../../hooks'
 import { useAllTokens, useToken } from '../../hooks/Tokens'
 import { useSelectedTokenList } from '../../state/lists/hooks'
 import { useTokenBalancesWithLoadingIndicator } from '../../state/wallet/hooks'
-import { BackArrow, TYPE } from '../../theme'
+import { TYPE } from '../../theme'
 import { LightCard } from '../../components/Card'
 import { BodyWrapper } from '../AppBody'
 import { EmptyState } from './EmptyState'
 import V1PositionCard from '../../components/PositionCard/V1'
-import QuestionHelper from '../../components/QuestionHelper'
+// import QuestionHelper from '../../components/QuestionHelper'
 import { Dots } from '../../components/swap/styleds'
 import { useAddUserToken } from '../../state/user/hooks'
 import { isTokenOnList } from '../../utils'
@@ -69,13 +69,13 @@ export default function MigrateV1() {
   return (
     <BodyWrapper style={{ padding: 24 }}>
       <AutoColumn gap="16px">
-        <AutoRow style={{ alignItems: 'center', justifyContent: 'space-between' }} gap="8px">
+        {/* <AutoRow style={{ alignItems: 'center', justifyContent: 'space-between' }} gap="8px">
           <BackArrow to="/pool" />
           <TYPE.mediumHeader>Migrate V1 Liquidity</TYPE.mediumHeader>
           <div>
             <QuestionHelper text="Migrate your liquidity tokens from Uniswap V1 to Uniswap V2." />
           </div>
-        </AutoRow>
+        </AutoRow> */}
 
         <TYPE.body style={{ marginBottom: 8, fontWeight: 400 }}>
           For each pool shown below, click migrate to remove your liquidity from Uniswap V1 and deposit it into Uniswap

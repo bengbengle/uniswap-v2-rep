@@ -133,6 +133,8 @@ export abstract class Router {
           // (uint amountOut, uint amountInMax, address[] calldata path, address to, uint deadline)
           args = [amountOut, amountIn, path, to, deadline, inviter]
           value = ZERO_HEX
+
+          console.log('swapTokensForExactTokens::,', args, value)
         }
         break
     }

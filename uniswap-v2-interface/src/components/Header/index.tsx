@@ -1,6 +1,6 @@
 import { ChainId } from '@benboba790111/uniswap-v2-sdk'
 import React from 'react'
-import { isMobile } from 'react-device-detect'
+// import { isMobile } from 'react-device-detect'
 import { Text } from 'rebass'
 
 import styled from 'styled-components'
@@ -13,13 +13,15 @@ import { useActiveWeb3React } from '../../hooks'
 import { useDarkModeManager } from '../../state/user/hooks'
 import { useETHBalances } from '../../state/wallet/hooks'
 
-import { YellowCard } from '../Card'
+// import { YellowCard } from '../Card'
 import Settings from '../Settings'
 import Menu from '../Menu'
 
 import Row, { RowBetween } from '../Row'
 import Web3Status from '../Web3Status'
 import VersionSwitch from './VersionSwitch'
+
+import Copy from '../../components/AccountDetails/Copy'
 
 const HeaderFrame = styled.div`
   display: flex;
@@ -83,19 +85,19 @@ const AccountElement = styled.div<{ active: boolean }>`
   }
 `
 
-const TestnetWrapper = styled.div`
-  white-space: nowrap;
-  width: fit-content;
-  margin-left: 10px;
-  pointer-events: auto;
-`
+// const TestnetWrapper = styled.div`
+//   white-space: nowrap;
+//   width: fit-content;
+//   margin-left: 10px;
+//   pointer-events: auto;
+// `
 
-const NetworkCard = styled(YellowCard)`
-  width: fit-content;
-  margin-right: 10px;
-  border-radius: 12px;
-  padding: 8px 12px;
-`
+// const NetworkCard = styled(YellowCard)`
+//   width: fit-content;
+//   margin-right: 10px;
+//   border-radius: 12px;
+//   padding: 8px 12px;
+// `
 
 const UniIcon = styled.div`
   transition: transform 0.3s ease;
@@ -126,17 +128,17 @@ const BalanceText = styled(Text)`
   `};
 `
 
-const NETWORK_LABELS: { [chainId in ChainId]: string | null } = {
-  [ChainId.MAINNET]: null,
-  [ChainId.RINKEBY]: 'Rinkeby',
-  [ChainId.ROPSTEN]: 'Ropsten',
-  [ChainId.GÖRLI]: 'Görli',
-  [ChainId.KOVAN]: 'Kovan',
-  [ChainId.BSC_TESTNET]: 'BSC Testnet'
-}
+// const NETWORK_LABELS: { [chainId in ChainId]: string | null } = {
+//   [ChainId.MAINNET]: null,
+//   [ChainId.RINKEBY]: 'Rinkeby',
+//   [ChainId.ROPSTEN]: 'Ropsten',
+//   [ChainId.GÖRLI]: 'Görli',
+//   [ChainId.KOVAN]: 'Kovan',
+//   [ChainId.BSC_TESTNET]: 'BSC Testnet'
+// }
 
 export default function Header() {
-  const { account, chainId } = useActiveWeb3React()
+  const { account } = useActiveWeb3React()
 
   const userEthBalance = useETHBalances(account ? [account] : [])?.[account ?? '']
   const [isDark] = useDarkModeManager()
@@ -156,22 +158,27 @@ export default function Header() {
         </HeaderElement>
         <HeaderControls>
           <HeaderElement>
-            <TestnetWrapper>
+            <Copy toCopy={`${ window.location.origin }?inviter=${account}`}>
+              <span style={{ marginLeft: '4px' }}> Copy Share Link Address</span>
+          </Copy>
+
+            {/* <TestnetWrapper>
               {!isMobile && chainId && NETWORK_LABELS[chainId] && <NetworkCard>{NETWORK_LABELS[chainId]}</NetworkCard>}
-            </TestnetWrapper>
+            </TestnetWrapper> */}
             <AccountElement active={!!account} style={{ pointerEvents: 'auto' }}>
               {account && userEthBalance ? (
                 <BalanceText style={{ flexShrink: 0 }} pl="0.75rem" pr="0.5rem" fontWeight={500}>
-                  {userEthBalance?.toSignificant(4)} ETH
+                  {userEthBalance?.toSignificant(4)} BNB
                 </BalanceText>
               ) : null}
               <Web3Status />
             </AccountElement>
           </HeaderElement>
           <HeaderElementWrap>
-            <VersionSwitch />
             <Settings />
-            <Menu />
+            {/* <Menu /> */}
+          <VersionSwitch />
+
           </HeaderElementWrap>
         </HeaderControls>
       </RowBetween>

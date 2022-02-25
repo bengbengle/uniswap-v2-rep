@@ -12,7 +12,7 @@ import { StyledInternalLink, TYPE } from '../../theme'
 import { Text } from 'rebass'
 import { LightCard } from '../../components/Card'
 import { RowBetween } from '../../components/Row'
-import { ButtonPrimary, ButtonSecondary } from '../../components/Button'
+import { ButtonPrimary } from '../../components/Button'
 import { AutoColumn } from '../../components/Column'
 
 import { useActiveWeb3React } from '../../hooks'
@@ -21,9 +21,13 @@ import { toV2LiquidityToken, useTrackedTokenPairs } from '../../state/user/hooks
 import AppBody from '../AppBody'
 import { Dots } from '../../components/swap/styleds'
 
+import { useTranslation } from 'react-i18next'
+
 export default function Pool() {
   const theme = useContext(ThemeContext)
   const { account } = useActiveWeb3React()
+
+  const { t } = useTranslation()
 
   // fetch the user's balances of all tracked V2 LP tokens
   const trackedTokenPairs = useTrackedTokenPairs()
@@ -59,11 +63,12 @@ export default function Pool() {
   return (
     <>
       <AppBody>
-        <SwapPoolTabs active={'pool'} />
+        <SwapPoolTabs active={ 'pool'} />
         <AutoColumn gap="lg" justify="center">
           <ButtonPrimary id="join-pool-button" as={Link} style={{ padding: 16 }} to="/add/ETH">
             <Text fontWeight={500} fontSize={20}>
               Add Liquidity
+              {/* { t('addLiquidity') } */}
             </Text>
           </ButtonPrimary>
 
@@ -113,11 +118,11 @@ export default function Pool() {
         </AutoColumn>
       </AppBody>
 
-      <div style={{ display: 'flex', alignItems: 'center', marginTop: '1.5rem' }}>
+      {/* <div style={{ display: 'flex', alignItems: 'center', marginTop: '1.5rem' }}>
         <ButtonSecondary as={Link} style={{ width: 'initial' }} to="/migrate/v1">
           Migrate V1 Liquidity
         </ButtonSecondary>
-      </div>
+      </div> */}
     </>
   )
 }

@@ -9,7 +9,7 @@ import { ButtonConfirmed } from '../../components/Button'
 import { LightCard, PinkCard, YellowCard } from '../../components/Card'
 import { AutoColumn } from '../../components/Column'
 import CurrencyLogo from '../../components/CurrencyLogo'
-import QuestionHelper from '../../components/QuestionHelper'
+// import QuestionHelper from '../../components/QuestionHelper'
 import { AutoRow, RowBetween, RowFixed } from '../../components/Row'
 import { Dots } from '../../components/swap/styleds'
 import { DEFAULT_DEADLINE_FROM_NOW, INITIAL_ALLOWED_SLIPPAGE } from '../../constants'
@@ -23,7 +23,7 @@ import { useV1ExchangeContract, useV2MigratorContract } from '../../hooks/useCon
 import { NEVER_RELOAD, useSingleCallResult } from '../../state/multicall/hooks'
 import { useIsTransactionPending, useTransactionAdder } from '../../state/transactions/hooks'
 import { useETHBalances, useTokenBalance } from '../../state/wallet/hooks'
-import { BackArrow, ExternalLink, TYPE } from '../../theme'
+import { ExternalLink, TYPE } from '../../theme'
 import { getEtherscanLink, isAddress } from '../../utils'
 import { BodyWrapper } from '../AppBody'
 import { EmptyState } from './EmptyState'
@@ -354,13 +354,13 @@ export default function MigrateV1Exchange({
   return (
     <BodyWrapper style={{ padding: 24 }}>
       <AutoColumn gap="16px">
-        <AutoRow style={{ alignItems: 'center', justifyContent: 'space-between' }} gap="8px">
+        {/* <AutoRow style={{ alignItems: 'center', justifyContent: 'space-between' }} gap="8px">
           <BackArrow to="/migrate/v1" />
           <TYPE.mediumHeader>Migrate V1 Liquidity</TYPE.mediumHeader>
           <div>
             <QuestionHelper text="Migrate your liquidity tokens from Uniswap V1 to Uniswap V2." />
           </div>
-        </AutoRow>
+        </AutoRow> */}
 
         {!account ? (
           <TYPE.largeHeader>You must connect an account.</TYPE.largeHeader>

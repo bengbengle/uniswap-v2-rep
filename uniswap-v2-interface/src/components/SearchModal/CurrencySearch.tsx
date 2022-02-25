@@ -67,7 +67,7 @@ export function CurrencySearch({
 
   const showETH: boolean = useMemo(() => {
     const s = searchQuery.toLowerCase().trim()
-    return s === '' || s === 'e' || s === 'et' || s === 'eth'
+    return s === '' || s === 'e' || s === 'th' || s === 'eth'
   }, [searchQuery])
 
   const tokenComparator = useTokenComparator(invertSearchOrder)
@@ -185,8 +185,8 @@ export function CurrencySearch({
         </AutoSizer>
       </div>
 
-      <Separator />
-      <Card>
+      {/* <Separator /> */}
+      {/* <Card>
         <RowBetween>
           {selectedListInfo.current ? (
             <Row>
@@ -208,7 +208,7 @@ export function CurrencySearch({
             {selectedListInfo.current ? 'Change' : 'Select a list'}
           </LinkStyledButton>
         </RowBetween>
-      </Card>
+      </Card> */}
     </Column>
   )
 }

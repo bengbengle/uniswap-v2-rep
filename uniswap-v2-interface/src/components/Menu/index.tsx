@@ -1,5 +1,6 @@
 import React, { useRef } from 'react'
-import { Info, BookOpen, Code, PieChart, MessageCircle } from 'react-feather'
+import { useParams } from "react-router-dom";
+import { Info, BookOpen, Code, PieChart, MessageCircle, Globe } from 'react-feather'
 import styled from 'styled-components'
 import { ReactComponent as MenuIcon } from '../../assets/images/menu.svg'
 import { useOnClickOutside } from '../../hooks/useOnClickOutside'
@@ -85,7 +86,11 @@ export default function Menu() {
   const [open, toggle] = useToggle(false)
 
   useOnClickOutside(node, open ? toggle : undefined)
-
+  const params = useParams();
+  
+  console.log('params:::', params)
+  // const lang = localStorage.getItem('i18nextLng')
+  // const change_lang = lang =='zh-CN' ? '"en"' : '"zh-CN"'
   return (
     // https://github.com/DefinitelyTyped/DefinitelyTyped/issues/30451
     <StyledMenu ref={node as any}>
@@ -114,6 +119,10 @@ export default function Menu() {
             <PieChart size={14} />
             Analytics
           </MenuItem>
+          {/* <MenuItem id="link" href={ 'javascript:changeLang('+ change_lang + ')'} target='self' >
+            <Globe size={14} />
+              {lang =='zh-CN' ?  'English' : '中文'}
+          </MenuItem> */}
         </MenuFlyout>
       )}
     </StyledMenu>

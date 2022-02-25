@@ -146,7 +146,10 @@ contract UniswapV2Router02 is IUniswapV2Router02 {
         uint amountBMin,
         address to,
         uint deadline,
-        bool approveMax, uint8 v, bytes32 r, bytes32 s
+        bool approveMax, 
+        uint8 v, 
+        bytes32 r, 
+        bytes32 s
     ) external virtual override returns (uint amountA, uint amountB) {
         address pair = UniswapV2Library.pairFor(factory, tokenA, tokenB);
         uint value = approveMax ? uint(-1) : liquidity;
