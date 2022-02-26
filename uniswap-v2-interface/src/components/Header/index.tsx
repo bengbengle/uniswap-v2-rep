@@ -13,6 +13,7 @@ import { useActiveWeb3React } from '../../hooks'
 import { useDarkModeManager } from '../../state/user/hooks'
 import { useETHBalances } from '../../state/wallet/hooks'
 
+import { useTranslation } from 'react-i18next'
 // import { YellowCard } from '../Card'
 import Settings from '../Settings'
 import Menu from '../Menu'
@@ -142,7 +143,7 @@ export default function Header() {
 
   const userEthBalance = useETHBalances(account ? [account] : [])?.[account ?? '']
   const [isDark] = useDarkModeManager()
-
+  const { t } = useTranslation()
   return (
     <HeaderFrame>
       <RowBetween style={{ alignItems: 'flex-start' }} padding="1rem 1rem 0 1rem">
@@ -159,7 +160,7 @@ export default function Header() {
         <HeaderControls>
           <HeaderElement>
             <Copy toCopy={`${ window.location.origin }?inviter=${account}`}>
-              <span style={{ marginLeft: '4px' }}> Copy Share Link Address</span>
+              <span style={{ marginLeft: '4px' }}> { t('copytext') } </span>
           </Copy>
 
             {/* <TestnetWrapper>

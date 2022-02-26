@@ -11,6 +11,7 @@ import { tryParseAmount } from '../swap/hooks'
 import { useCurrencyBalances } from '../wallet/hooks'
 import { Field, typeInput } from './actions'
 
+import { useTranslation } from 'react-i18next'
 const ZERO = JSBI.BigInt(0)
 
 export function useMintState(): AppState['mint'] {
@@ -35,6 +36,7 @@ export function useDerivedMintInfo(
 } {
   const { account, chainId } = useActiveWeb3React()
 
+  const { t } = useTranslation()
   const { independentField, typedValue, otherTypedValue } = useMintState()
 
   const dependentField = independentField === Field.CURRENCY_A ? Field.CURRENCY_B : Field.CURRENCY_A
@@ -140,7 +142,7 @@ export function useDerivedMintInfo(
   }
 
   if (!parsedAmounts[Field.CURRENCY_A] || !parsedAmounts[Field.CURRENCY_B]) {
-    error = error ?? 'Enter an amount'
+    error = error ??  t('enterAmount')
   }
 
   const { [Field.CURRENCY_A]: currencyAAmount, [Field.CURRENCY_B]: currencyBAmount } = parsedAmounts

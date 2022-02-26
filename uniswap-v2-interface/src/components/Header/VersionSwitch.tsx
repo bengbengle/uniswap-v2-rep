@@ -20,6 +20,11 @@ const VersionLabel = styled.span<{ enabled: boolean }>`
   }
 `
 
+enum I18 {
+  opt1 = 'en',
+  opt2 = 'zh-CN'
+}
+
 interface VersionToggleProps extends React.ComponentProps<typeof Link> {
   enabled: boolean
 }
@@ -41,11 +46,13 @@ const VersionToggle = styled(({ enabled, ...rest }: VersionToggleProps) => <Link
 `
 
 export default function VersionSwitch() {
-  const version = useToggledVersion()
+  // const version = useToggledVersion()
   const location = useLocation()
   const query = useParsedQueryString()
   
   const versionSwitchAvailable = location.pathname === '/swap' || location.pathname === '/send'
+
+  const version = localStorage.getItem('i18nextLng')
 
   const toggleDest = useMemo(() => {
     return versionSwitchAvailable
@@ -63,10 +70,17 @@ export default function VersionSwitch() {
     [versionSwitchAvailable]
   )
 
+  const switchLang = () => {
+    let i18 = localStorage.getItem('i18nextLng');
+    if(i18 == 'en') localStorage.setItem('i18nextLng', 'zh-CN')
+    else localStorage.setItem('i18nextLng', 'en')
+    window.location.reload()
+  }
+
   const toggle = (
-    <VersionToggle enabled={versionSwitchAvailable} to={toggleDest} onClick={handleClick}>
-      <VersionLabel enabled={version === Version.v2 || !versionSwitchAvailable}>En</VersionLabel>
-      <VersionLabel enabled={version === Version.v1 && versionSwitchAvailable}>中</VersionLabel>
+    <VersionToggle enabled={versionSwitchAvailable} to={toggleDest} onClick={switchLang}>
+      <VersionLabel enabled={version === I18.opt1 || !versionSwitchAvailable}>En</VersionLabel>
+      <VersionLabel enabled={version === I18.opt2 && versionSwitchAvailable}>中</VersionLabel>
     </VersionToggle>
   )
   return versionSwitchAvailable ? (

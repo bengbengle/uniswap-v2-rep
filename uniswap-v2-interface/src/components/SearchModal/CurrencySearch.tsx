@@ -156,9 +156,9 @@ export function CurrencySearch({
           onChange={handleInput}
           onKeyDown={handleEnter}
         />
-        {showCommonBases && (
+        {/* {showCommonBases && (
           <CommonBases chainId={chainId} onSelect={handleCurrencySelect} selectedCurrency={selectedCurrency} />
-        )}
+        )} */}
         <RowBetween>
           <Text fontSize={14} fontWeight={500}>
             Token Name

@@ -71,5 +71,14 @@
   "tokenAddress": "通证地址",
   "label": "通证符号",
   "decimals": "小数位数",
-  "enterTokenCont": "输入通证地址并继续"
+  "enterTokenCont": "输入通证地址并继续",
+
+  "copytext": "复制邀请地址",
+  "enterAmount": "输入金额",
+
+  "enterRecipient": "输入接收地址",
+  "connectWallet":"连接钱包",
+  
+  "connectfindpools":  "连接钱包发现池子"
+
 }

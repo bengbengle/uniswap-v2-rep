@@ -19,6 +19,8 @@ import { injected } from '../../connectors'
 import { WalletConnectConnector } from '@web3-react/walletconnect-connector'
 import { AbstractConnector } from '@web3-react/abstract-connector'
 
+import { useTranslation } from 'react-i18next'
+
 const CloseIcon = styled.div`
   position: absolute;
   right: 1rem;
@@ -138,6 +140,7 @@ export default function WalletModal({
 
   const previousAccount = usePrevious(account)
 
+  const { t } = useTranslation()
   // close on connection, when logged out before
   useEffect(() => {
     if (account && !previousAccount && walletModalOpen) {
@@ -334,7 +337,7 @@ export default function WalletModal({
           </HeaderRow>
         ) : (
           <HeaderRow>
-            <HoverText>Connect to a wallet</HoverText>
+            <HoverText>{ t('connectWallet')} </HoverText>
           </HeaderRow>
         )}
         <ContentWrapper>
