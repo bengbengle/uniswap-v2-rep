@@ -169,6 +169,7 @@ export default function AddLiquidity({
       ]
       value = null
     }
+    console.log('args::', args , 'value::',value)
 
     setAttemptingTxn(true)
     await estimate(...args, value ? { value } : {})

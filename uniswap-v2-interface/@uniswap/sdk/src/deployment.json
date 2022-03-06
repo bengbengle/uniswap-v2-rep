@@ -9,16 +9,16 @@
       "fromBlock": 16719419
     },
     "factory": {
-      "proxyAddress": "0xAEE91e0449058a111b8eBd289152a7767B4411Cf",
-      "implAddress": "0xAEE91e0449058a111b8eBd289152a7767B4411Cf",
+      "proxyAddress": "0x37db1fe57ebf6f43209f52d73e6d472b779ea52c",
+      "implAddress": "0x37db1fe57ebf6f43209f52d73e6d472b779ea52c",
       "version": "1.0.0",
       "contract": "UniswapV2Factory",
       "operator": "0x8368beeeedec26444e7393a6a572137c1d2b9b8d",
       "fromBlock": 16719531
     },
     "router": {
-      "proxyAddress": "0x96f6E2E22a897fBc3995B7258335205E01FB08E4",
-      "implAddress": "0x96f6E2E22a897fBc3995B7258335205E01FB08E4",
+      "proxyAddress": "0xd49f7e8926fe907bd5debebbe12daf71b65ee30b",
+      "implAddress": "0xd49f7e8926fe907bd5debebbe12daf71b65ee30b",
       "version": "1.0.0",
       "contract": "UniswapV2Router02",
       "operator": "0x8368beeeedec26444e7393a6a572137c1d2b9b8d",

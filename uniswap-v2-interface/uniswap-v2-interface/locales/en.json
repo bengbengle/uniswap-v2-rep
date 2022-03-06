@@ -125,7 +125,8 @@
   "ImportPool": "Import Pool",
   
   "invalidpair": "Invalid Pair",
-  "connectNetwork": "Please connect to the appropriate BSC network."
+  "connectNetwork": "Please connect to the appropriate BSC network.",
+  "minutes": "minutes"
   
 
 }

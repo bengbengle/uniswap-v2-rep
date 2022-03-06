@@ -106,5 +106,6 @@
 
   "TransactionSettings": "交易設置",
   "ImportPool": "交易設置",
-  "invalidpair": "無效交易對"
+  "invalidpair": "無效交易對",
+  "minutes": "分钟"
 }
