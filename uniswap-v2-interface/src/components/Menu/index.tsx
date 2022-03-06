@@ -117,10 +117,6 @@ export default function Menu() {
             <PieChart size={14} />
             Analytics
           </MenuItem>
-          {/* <MenuItem id="link" href={ 'javascript:changeLang('+ change_lang + ')'} target='self' >
-            <Globe size={14} />
-              {lang =='zh-CN' ?  'English' : '中文'}
-          </MenuItem> */}
         </MenuFlyout>
       )}
     </StyledMenu>
