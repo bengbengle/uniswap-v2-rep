@@ -11,7 +11,7 @@ import {
 import TransactionSettings from '../TransactionSettings'
 import { RowFixed, RowBetween } from '../Row'
 import { TYPE } from '../../theme'
-import QuestionHelper from '../QuestionHelper'
+// import QuestionHelper from '../QuestionHelper'
 import Toggle from '../Toggle'
 import { ThemeContext } from 'styled-components'
 import { AutoColumn } from '../Column'
@@ -19,6 +19,8 @@ import { ButtonError } from '../Button'
 import { useSettingsMenuOpen, useToggleSettingsMenu } from '../../state/application/hooks'
 import { Text } from 'rebass'
 import Modal from '../Modal'
+
+import { useTranslation } from 'react-i18next'
 
 const StyledMenuIcon = styled(Settings)`
   height: 20px;
@@ -125,7 +127,7 @@ export default function SettingsTab() {
   const node = useRef<HTMLDivElement>()
   const open = useSettingsMenuOpen()
   const toggle = useToggleSettingsMenu()
-
+  const { t } = useTranslation()
   const theme = useContext(ThemeContext)
   const [userSlippageTolerance, setUserslippageTolerance] = useUserSlippageTolerance()
 
@@ -140,6 +142,7 @@ export default function SettingsTab() {
 
   useOnClickOutside(node, open ? toggle : undefined)
 
+  // toggleDarkMode()
   return (
     // https://github.com/DefinitelyTyped/DefinitelyTyped/issues/30451
     <StyledMenu ref={node as any}>
@@ -194,7 +197,7 @@ export default function SettingsTab() {
         <MenuFlyout>
           <AutoColumn gap="md" style={{ padding: '1rem' }}>
             <Text fontWeight={600} fontSize={14}>
-              Transaction Settings
+              {t('TransactionSettings')}
             </Text>
             <TransactionSettings
               rawSlippage={userSlippageTolerance}
@@ -202,7 +205,7 @@ export default function SettingsTab() {
               deadline={deadline}
               setDeadline={setDeadline}
             />
-            <Text fontWeight={600} fontSize={14}>
+            {/* <Text fontWeight={600} fontSize={14}>
               Interface Settings
             </Text>
             <RowBetween>
@@ -210,7 +213,6 @@ export default function SettingsTab() {
                 <TYPE.black fontWeight={400} fontSize={14} color={theme.text2}>
                   Toggle Expert Mode
                 </TYPE.black>
-                <QuestionHelper text="Bypasses confirmation modals and allows high slippage trades. Use at your own risk." />
               </RowFixed>
               <Toggle
                 id="toggle-expert-mode-button"
@@ -235,7 +237,7 @@ export default function SettingsTab() {
                 </TYPE.black>
               </RowFixed>
               <Toggle isActive={darkMode} toggle={toggleDarkMode} />
-            </RowBetween>
+            </RowBetween> */}
           </AutoColumn>
         </MenuFlyout>
       )}

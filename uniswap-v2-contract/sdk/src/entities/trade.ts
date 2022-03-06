@@ -12,6 +12,8 @@ import { Pair } from './pair'
 import { Route } from './route'
 import { currencyEquals, Token, WETH } from './token'
 
+import { InsufficientReservesError, InsufficientInputAmountError } from '../errors'
+
 /**
  * Returns the percent difference between the mid price and the execution price, i.e. price impact.
  * @param midPrice mid price before the trade
@@ -203,6 +205,7 @@ export class Trade {
    * @param slippageTolerance tolerance of unfavorable slippage from the execution price of this trade
    */
   public minimumAmountOut(slippageTolerance: Percent): CurrencyAmount {
+    console.log('slippageTolerance::', slippageTolerance)
     invariant(!slippageTolerance.lessThan(ZERO), 'SLIPPAGE_TOLERANCE')
     if (this.tradeType === TradeType.EXACT_OUTPUT) {
       return this.outputAmount
@@ -222,6 +225,7 @@ export class Trade {
    * @param slippageTolerance tolerance of unfavorable slippage from the execution price of this trade
    */
   public maximumAmountIn(slippageTolerance: Percent): CurrencyAmount {
+    console.log('slippageTolerance::', slippageTolerance)
     invariant(!slippageTolerance.lessThan(ZERO), 'SLIPPAGE_TOLERANCE')
     if (this.tradeType === TradeType.EXACT_INPUT) {
       return this.inputAmount
@@ -280,8 +284,9 @@ export class Trade {
       try {
         ;[amountOut] = pair.getOutputAmount(amountIn)
       } catch (error) {
+        // const error = err as InsufficientInputAmountError
         // input too low
-        if (error.isInsufficientInputAmountError) {
+        if ((error as InsufficientInputAmountError).isInsufficientInputAmountError) {
           continue
         }
         throw error
@@ -367,9 +372,10 @@ export class Trade {
       let amountIn: TokenAmount
       try {
         ;[amountIn] = pair.getInputAmount(amountOut)
-      } catch (error) {
+      } catch (error ) {
         // not enough liquidity in this pair
-        if (error.isInsufficientReservesError) {
+        // const error = ;
+        if ((error as InsufficientReservesError).isInsufficientReservesError) {
           continue
         }
         throw error

@@ -89,8 +89,6 @@ export default function Menu() {
   const params = useParams();
   
   console.log('params:::', params)
-  // const lang = localStorage.getItem('i18nextLng')
-  // const change_lang = lang =='zh-CN' ? '"en"' : '"zh-CN"'
   return (
     // https://github.com/DefinitelyTyped/DefinitelyTyped/issues/30451
     <StyledMenu ref={node as any}>

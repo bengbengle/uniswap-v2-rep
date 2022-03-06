@@ -159,7 +159,7 @@ export default function Header() {
         </HeaderElement>
         <HeaderControls>
           <HeaderElement>
-            <Copy toCopy={`${ window.location.origin }?inviter=${account}`}>
+            <Copy toCopy={`${  window.location.origin }${window.location.pathname}?inviter=${account}`}>
               <span style={{ marginLeft: '4px' }}> { t('copytext') } </span>
           </Copy>
 

@@ -324,7 +324,7 @@ export default function AddLiquidity({
             pendingText={pendingText}
           />
           <AutoColumn gap="20px">
-            {noLiquidity && (
+            {/* {noLiquidity && (
               <ColumnCenter>
                 <BlueCard>
                   <AutoColumn gap="10px">
@@ -340,7 +340,7 @@ export default function AddLiquidity({
                   </AutoColumn>
                 </BlueCard>
               </ColumnCenter>
-            )}
+            )} */}
             <CurrencyInputPanel
               value={formattedAmounts[Field.CURRENCY_A]}
               onUserInput={onFieldAInput}

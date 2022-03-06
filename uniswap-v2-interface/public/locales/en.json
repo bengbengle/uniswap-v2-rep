@@ -1,6 +1,7 @@
 {
   "noWallet": "No Ethereum wallet found",
   "wrongNetwork": "You are on the wrong network",
+  "errorPage": "Error connecting. Try refreshing the page.",
   "switchNetwork": "Please switch to {{ correctNetwork }}",
   "installWeb3MobileBrowser": "Please visit us from a web3-enabled mobile browser such as Trust Wallet or Coinbase Wallet.",
   "installMetamask": "Please visit us after installing Metamask on Chrome or Brave.",
@@ -94,6 +95,38 @@
 
   "enterRecipient": "Enter a recipient",
   "connectWallet":"Connect to a wallet",
-   "connectfindpools":  "Connect to a wallet to find pools"
+   "connectfindpools":  "Connect to a wallet to find pools",
+
+  "slippageTolerance": "Slippage Tolerance",
+  
+  "transactionDeadline" :"Transaction Deadline",
+
+
+  "createLiquidity": "Create Liquidity",
+  "errorConnecting": "Error Connecting",
+  "errormsg1": "This transaction will not succeed either due to price movement or fee on transfer. Try increasing your",
+  
+  "yourLiquidity": "Your Liquidity",
+  "Noliquidityfound": "No liquidity found",
+  "Migratenow": "Migrate now",
+  "Importit": "Import It",
+  "joined": "Don't see a pool you joined",
+
+  "tip1": "When you add liquidity, you are given pool tokens representing your position. These tokens automatically earn fees proportional to your share of the pool, and can be redeemed at any time.",
+  "tip2": "Removing pool tokens converts your position back into underlying tokens at the current rate, proportional to your share of the pool. Accrued fees are included in the amounts you receive.",
+  "tip3": "When you add liquidity, you are given pool tokens that represent your share. If you don’t see a pool you joined in this list, try importing a pool below.",
+  "tip4": "Connect to a wallet to view your liquidity.",
+
+  "tip5": "Enter a token address to find liquidity",
+
+  
+  "TransactionSettings": "Transaction Settings",
+
+  "ImportPool": "Import Pool",
+  
+  "invalidpair": "Invalid Pair",
+  "connectNetwork": "Please connect to the appropriate BSC network.",
+  "minutes": "minutes"
+  
 
 }

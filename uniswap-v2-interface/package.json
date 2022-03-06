@@ -6,7 +6,6 @@
   "private": true,
   "devDependencies": {
     "@ethersproject/experimental": "^5.0.1",
-    "@benboba790111/uniswap-v2-sdk": "file:../uniswap-v2-contract/sdk",
     "@popperjs/core": "^2.4.4",
     "@reach/dialog": "^0.10.3",
     "@reach/portal": "^0.10.3",
@@ -27,7 +26,8 @@
     "@types/testing-library__cypress": "^5.0.5",
     "@typescript-eslint/eslint-plugin": "^2.31.0",
     "@typescript-eslint/parser": "^2.31.0",
-    
+
+    "@benboba790111/uniswap-v2-sdk": "file:./@uniswap/sdk",
     "@uniswap/default-token-list": "file:./@uniswap/default-token-list",
     "@uniswap/token-lists": "file:./@uniswap/token-lists",
     "@uniswap/v2-periphery": "file:./@uniswap/v2-periphery",

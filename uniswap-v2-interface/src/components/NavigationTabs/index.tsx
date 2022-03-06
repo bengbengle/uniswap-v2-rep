@@ -8,6 +8,8 @@ import { ArrowLeft } from 'react-feather'
 import { RowBetween } from '../Row'
 import QuestionHelper from '../QuestionHelper'
 
+// import { useTranslation } from 'react-i18next'
+
 const Tabs = styled.div`
   ${({ theme }) => theme.flexRowNoWrap}
   align-items: center;
@@ -67,20 +69,26 @@ export function SwapPoolTabs({ active }: { active: 'swap' | 'pool' }) {
 }
 
 export function FindPoolTabs() {
+  const { t } = useTranslation()
   return (
     <Tabs>
       <RowBetween style={{ padding: '1rem' }}>
         <HistoryLink to="/pool">
           <StyledArrowLeft />
         </HistoryLink>
-        <ActiveText>Import Pool</ActiveText>
-        <QuestionHelper text={"Use this tool to find pairs that don't automatically appear in the interface."} />
+        <ActiveText>
+          {t('ImportPool')}
+
+        </ActiveText>
+        {/* <QuestionHelper text={"Use this tool to find pairs that don't automatically appear in the interface."} /> */}
       </RowBetween>
     </Tabs>
   )
 }
 
 export function AddRemoveTabs({ adding }: { adding: boolean }) {
+  const {t} = useTranslation();
+
   return (
     <Tabs>
       <RowBetween style={{ padding: '1rem' }}>
@@ -91,8 +99,8 @@ export function AddRemoveTabs({ adding }: { adding: boolean }) {
         <QuestionHelper
           text={
             adding
-              ? 'When you add liquidity, you are given pool tokens representing your position. These tokens automatically earn fees proportional to your share of the pool, and can be redeemed at any time.'
-              : 'Removing pool tokens converts your position back into underlying tokens at the current rate, proportional to your share of the pool. Accrued fees are included in the amounts you receive.'
+              ?  t('tip1') //'When you add liquidity, you are given pool tokens representing your position. These tokens automatically earn fees proportional to your share of the pool, and can be redeemed at any time.'
+              :  t('tip2') //'Removing pool tokens converts your position back into underlying tokens at the current rate, proportional to your share of the pool. Accrued fees are included in the amounts you receive.'
           }
         />
       </RowBetween>

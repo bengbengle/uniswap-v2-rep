@@ -13,6 +13,8 @@ import { useV1ExchangeContract } from './useContract'
 import useENS from './useENS'
 import { Version } from './useToggledVersion'
 
+import { useTranslation } from 'react-i18next'
+
 export enum SwapCallbackState {
   INVALID,
   LOADING,
@@ -100,6 +102,7 @@ function useSwapCallArguments(
         )
         break
     }
+    console.log('swapMethods::', swapMethods)
     return swapMethods.map(parameters => ({ parameters, contract }))
   }, [account, allowedSlippage, chainId, deadline, library, recipient, trade, v1Exchange])
 }
@@ -113,7 +116,7 @@ export function useSwapCallback(
   recipientAddressOrName: string | null // the ENS name or address of the recipient of the trade, or null if swap should be returned to sender
 ): { state: SwapCallbackState; callback: null | (() => Promise<string>); error: string | null } {
   const { account, chainId, library } = useActiveWeb3React()
-
+  const { t } = useTranslation()
   const swapCalls = useSwapCallArguments(trade, allowedSlippage, deadline, recipientAddressOrName)
 
   const addTransaction = useTransactionAdder()
@@ -167,8 +170,7 @@ export function useSwapCallback(
                     switch (callError.reason) {
                       case 'UniswapV2Router: INSUFFICIENT_OUTPUT_AMOUNT':
                       case 'UniswapV2Router: EXCESSIVE_INPUT_AMOUNT':
-                        errorMessage =
-                          'This transaction will not succeed either due to price movement or fee on transfer. Try increasing your slippage tolerance.'
+                        errorMessage = t('errormsg1')// 'This transaction will not succeed either due to price movement or fee on transfer. Try increasing your slippage tolerance.'
                         break
                       default:
                         errorMessage = `The transaction cannot succeed due to error: 

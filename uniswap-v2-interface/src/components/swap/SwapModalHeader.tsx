@@ -1,4 +1,5 @@
-import { Trade, TradeType } from '@benboba790111/uniswap-v2-sdk'
+// import { Trade, TradeType } from '@benboba790111/uniswap-v2-sdk'
+import { JSBI, Percent, Trade, TradeType } from '@benboba790111/uniswap-v2-sdk'
 import React, { useContext, useMemo } from 'react'
 import { ArrowDown, AlertTriangle } from 'react-feather'
 import { Text } from 'rebass'
@@ -12,6 +13,8 @@ import { AutoColumn } from '../Column'
 import CurrencyLogo from '../CurrencyLogo'
 import { RowBetween, RowFixed } from '../Row'
 import { TruncatedText, SwapShowAcceptChanges } from './styleds'
+
+import { useTranslation } from 'react-i18next'
 
 export default function SwapModalHeader({
   trade,
@@ -34,6 +37,8 @@ export default function SwapModalHeader({
   const priceImpactSeverity = warningSeverity(priceImpactWithoutFee)
 
   const theme = useContext(ThemeContext)
+
+  const Invider_FEE = new Percent(JSBI.BigInt(99), JSBI.BigInt(100))
 
   return (
     <AutoColumn gap={'md'} style={{ marginTop: '20px' }}>
@@ -101,7 +106,7 @@ export default function SwapModalHeader({
           <TYPE.italic textAlign="left" style={{ width: '100%' }}>
             {`Output is estimated. You will receive at least `}
             <b>
-              {slippageAdjustedAmounts[Field.OUTPUT]?.toSignificant(6)} {trade.outputAmount.currency.symbol}
+              {slippageAdjustedAmounts[Field.OUTPUT]?.multiply(Invider_FEE).toSignificant(6)} {trade.outputAmount.currency.symbol}
             </b>
             {' or the transaction will revert.'}
           </TYPE.italic>

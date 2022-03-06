@@ -183,7 +183,7 @@ export default function WalletModal({
     setWalletView(WALLET_VIEWS.PENDING)
 
     // if the connector is walletconnect and the user has already tried to connect, manually reset the connector
-    if (connector instanceof WalletConnectConnector && connector.walletConnectProvider?.wc?.uri) {
+    if (connector instanceof WalletConnectConnector ) {
       connector.walletConnectProvider = undefined
     }
 
@@ -297,12 +297,13 @@ export default function WalletModal({
           <CloseIcon onClick={toggleWalletModal}>
             <CloseColor />
           </CloseIcon>
-          <HeaderRow>{error instanceof UnsupportedChainIdError ? 'Wrong Network' : 'Error connecting'}</HeaderRow>
+          <HeaderRow>{error instanceof UnsupportedChainIdError ? t('wrongNetwork')  : t('errornetwork') }</HeaderRow>
           <ContentWrapper>
             {error instanceof UnsupportedChainIdError ? (
-              <h5>Please connect to the appropriate Ethereum network.</h5>
+
+              <h5> { t('connectNetwork') } </h5>
             ) : (
-              'Error connecting. Try refreshing the page.'
+              t('errorPage')
             )}
           </ContentWrapper>
         </UpperSection>
@@ -337,7 +338,7 @@ export default function WalletModal({
           </HeaderRow>
         ) : (
           <HeaderRow>
-            <HoverText>{ t('connectWallet')} </HoverText>
+            <HoverText>{ t('connectWallet') } </HoverText>
           </HeaderRow>
         )}
         <ContentWrapper>

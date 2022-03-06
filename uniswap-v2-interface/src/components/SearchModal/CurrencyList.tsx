@@ -171,7 +171,14 @@ export default function CurrencyList({
   fixedListRef?: MutableRefObject<FixedSizeList | undefined>
   showETH: boolean
 }) {
-  const itemData = useMemo(() => (showETH ? [Currency.ETHER, ...currencies] : currencies), [currencies, showETH])
+
+  console.log('Currency.ETHER::', Currency.ETHER)
+
+  let BNB: any = Currency.ETHER
+  BNB.name = "BNB"
+  BNB.symbol = "BNB"
+  
+  const itemData = useMemo(() => (showETH ? [BNB, ...currencies] : currencies), [currencies, showETH])
 
   const Row = useCallback(
     ({ data, index, style }) => {

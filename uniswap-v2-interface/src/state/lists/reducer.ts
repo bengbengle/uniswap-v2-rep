@@ -41,9 +41,10 @@ const initialState: ListsState = {
       current: UNISWAP_DEFAULT_LIST,
       loadingRequestId: null,
       pendingUpdate: null
-    }
+    },
+    // [selectedListUrl]: ''
   },
-  selectedListUrl: undefined
+  selectedListUrl: 'https://raw.githubusercontent.com/compound-finance/token-list/master/compound.tokenlist.json'
 }
 
 export default createReducer(initialState, builder =>

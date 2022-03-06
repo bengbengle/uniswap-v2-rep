@@ -26,7 +26,6 @@ export interface UserState {
 
   userExpertMode: boolean
 
-  // user defined slippage tolerance in bips, used in all txns
   userSlippageTolerance: number
 
   // deadline set by user in minutes, used in all txns

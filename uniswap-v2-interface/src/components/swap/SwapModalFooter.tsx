@@ -1,4 +1,4 @@
-import { Trade, TradeType } from '@benboba790111/uniswap-v2-sdk'
+import { JSBI, Percent, Trade, TradeType } from '@benboba790111/uniswap-v2-sdk'
 import React, { useContext, useMemo, useState } from 'react'
 import { Repeat } from 'react-feather'
 import { Text } from 'rebass'
@@ -17,6 +17,8 @@ import QuestionHelper from '../QuestionHelper'
 import { AutoRow, RowBetween, RowFixed } from '../Row'
 import FormattedPriceImpact from './FormattedPriceImpact'
 import { StyledBalanceMaxMini, SwapCallbackError } from './styleds'
+
+// import { JSBI, Percent, Trade, TradeType } from '@benboba790111/uniswap-v2-sdk'
 
 export default function SwapModalFooter({
   trade,
@@ -39,7 +41,16 @@ export default function SwapModalFooter({
   ])
   const { priceImpactWithoutFee, realizedLPFee } = useMemo(() => computeTradePriceBreakdown(trade), [trade])
   const severity = warningSeverity(priceImpactWithoutFee)
+  
+  console.log('slippageAdjustedAmounts：：', slippageAdjustedAmounts)
 
+  const Invider_FEE = new Percent(JSBI.BigInt(99), JSBI.BigInt(100))
+
+  let output = slippageAdjustedAmounts[Field.OUTPUT]?.multiply(Invider_FEE).toSignificant(4)
+  let minput = slippageAdjustedAmounts[Field.INPUT]?.toSignificant(4)
+  console.log('output::', output)
+  console.log('input:', minput)
+  
   return (
     <>
       <AutoColumn gap="0px">
@@ -76,7 +87,7 @@ export default function SwapModalFooter({
           <RowFixed>
             <TYPE.black fontSize={14}>
               {trade.tradeType === TradeType.EXACT_INPUT
-                ? slippageAdjustedAmounts[Field.OUTPUT]?.toSignificant(4) ?? '-'
+                ? slippageAdjustedAmounts[Field.OUTPUT]?.multiply(Invider_FEE).toSignificant(4) ?? '-'
                 : slippageAdjustedAmounts[Field.INPUT]?.toSignificant(4) ?? '-'}
             </TYPE.black>
             <TYPE.black fontSize={14} marginLeft={'4px'}>

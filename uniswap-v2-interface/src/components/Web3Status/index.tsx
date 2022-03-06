@@ -198,13 +198,6 @@ function Web3StatusInner() {
       </Web3StatusConnected>
     )
   } else {
-  //   return (
-  //     <Web3StatusError onClick={toggleWalletModal}>
-  //       <NetworkIcon />
-  //       <Text>{error instanceof UnsupportedChainIdError ? 'Wrong Network' : 'Error'}</Text>
-  //     </Web3StatusError>
-  //   )
-  // } else {
     return (
       <Web3StatusConnect id="connect-wallet" onClick={toggleWalletModal} faded={!account}>
         <Text>{t('connectWallet')}</Text>

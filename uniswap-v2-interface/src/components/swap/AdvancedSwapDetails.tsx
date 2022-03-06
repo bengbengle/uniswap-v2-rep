@@ -1,4 +1,4 @@
-import { Trade, TradeType } from '@benboba790111/uniswap-v2-sdk'
+// import { } from '@benboba790111/uniswap-v2-sdk'
 import React, { useContext } from 'react'
 import { ThemeContext } from 'styled-components'
 import { Field } from '../../state/swap/actions'
@@ -11,6 +11,7 @@ import { RowBetween, RowFixed } from '../Row'
 import FormattedPriceImpact from './FormattedPriceImpact'
 import { SectionBreak } from './styleds'
 import SwapRoute from './SwapRoute'
+import { JSBI, Percent, Trade, TradeType } from '@benboba790111/uniswap-v2-sdk'
 
 function TradeSummary({ trade, allowedSlippage }: { trade: Trade; allowedSlippage: number }) {
   const theme = useContext(ThemeContext)
@@ -18,6 +19,7 @@ function TradeSummary({ trade, allowedSlippage }: { trade: Trade; allowedSlippag
   const isExactIn = trade.tradeType === TradeType.EXACT_INPUT
   const slippageAdjustedAmounts = computeSlippageAdjustedAmounts(trade, allowedSlippage)
 
+  const Invider_FEE = new Percent(JSBI.BigInt(99), JSBI.BigInt(100))
   return (
     <>
       <AutoColumn style={{ padding: '0 20px' }}>
@@ -31,7 +33,7 @@ function TradeSummary({ trade, allowedSlippage }: { trade: Trade; allowedSlippag
           <RowFixed>
             <TYPE.black color={theme.text1} fontSize={14}>
               {isExactIn
-                ? `${slippageAdjustedAmounts[Field.OUTPUT]?.toSignificant(4)} ${trade.outputAmount.currency.symbol}` ??
+                ? `${slippageAdjustedAmounts[Field.OUTPUT]?.multiply(Invider_FEE).toSignificant(4)} ${trade.outputAmount.currency.symbol}` ??
                   '-'
                 : `${slippageAdjustedAmounts[Field.INPUT]?.toSignificant(4)} ${trade.inputAmount.currency.symbol}` ??
                   '-'}

@@ -18,10 +18,14 @@ import V1PositionCard from '../../components/PositionCard/V1'
 import { Dots } from '../../components/swap/styleds'
 import { useAddUserToken } from '../../state/user/hooks'
 import { isTokenOnList } from '../../utils'
+import { useTranslation } from 'react-i18next'
 
 export default function MigrateV1() {
+
   const theme = useContext(ThemeContext)
   const { account, chainId } = useActiveWeb3React()
+
+  const {t} = useTranslation();
 
   const [tokenSearch, setTokenSearch] = useState<string>('')
   const handleTokenSearchChange = useCallback(e => setTokenSearch(e.target.value), [setTokenSearch])
@@ -85,7 +89,8 @@ export default function MigrateV1() {
         {!account ? (
           <LightCard padding="40px">
             <TYPE.body color={theme.text3} textAlign="center">
-              Connect to a wallet to view your V1 liquidity.
+              {/* Connect to a wallet to view your V1 liquidity. */}
+              {t('tip4')}
             </TYPE.body>
           </LightCard>
         ) : isLoading ? (

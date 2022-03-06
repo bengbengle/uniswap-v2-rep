@@ -1,6 +1,9 @@
 {
   "noWallet": "未偵測到以太坊錢包",
   "wrongNetwork": "你位在錯誤的網路",
+  "errorConnecting": "错误连接",
+  "connectNetwork": "請連接到BSC網絡",
+  "errorPage": "错误连接，请刷新页面",
   "switchNetwork": "請切換到 {{ correctNetwork }}",
   "installWeb3MobileBrowser": "請安裝含有 web3 瀏覽器的手機錢包，如 Trust Wallet 或 Coinbase Wallet。",
   "installMetamask": "請使用 Chrome 或 Brave 瀏覽器安裝 Metamask。",
@@ -71,5 +74,38 @@
   "tokenAddress": "代幣地址",
   "label": "代幣符號",
   "decimals": "小數位數",
-  "enterTokenCont": "輸入代幣地址"
+  "enterTokenCont": "輸入代幣地址",
+
+  
+  "copytext": "複制邀請地址",
+  "enterAmount": "輸入金額",
+
+  "enterRecipient": "輸入接收地址",
+  "connectWallet":"連接錢包",
+  
+  "connectfindpools":  "連接錢包發現池子",
+  
+  "slippageTolerance": "滑點容差",
+  "transactionDeadline" :"交易截止日期",
+  "createLiquidity": "創建流動性",
+  "errormsg1": "由于價格變動或轉讓費用，此交易將不會成功。嘗試增加您的滑點容限",
+
+  "yourLiquidity": "你的流動性",
+  "Noliquidityfound": "未發現流動性",
+  "Migratenow": "Migratenow",
+  "Importit": "導入",
+  "joined": "未發現你加入池子",
+
+  "tip1": "當您增加流動性時，您將獲得代表您頭寸的池代幣。這些代幣會自動賺取與您在池中的份額成比例的費用，並且可以隨時贖回。",
+  "tip2": "移除池代幣會將您的頭寸以當前比率轉換回基礎代幣，與您在池中的份額成正比。應計費用包含在您收到的金額中。",
+
+  "tip3": "當您增加流動性時，您將獲得代表您份額的池代幣。如果您在此列表中沒有看到您加入的池，請嘗試在下面導入池。",
+  "tip4": "連接到錢包以查看您的流動性。",
+
+  "tip5": "輸入代幣地址以查找流動性",
+
+  "TransactionSettings": "交易設置",
+  "ImportPool": "交易設置",
+  "invalidpair": "無效交易對",
+  "minutes": "分钟"
 }

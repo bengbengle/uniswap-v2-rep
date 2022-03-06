@@ -18,6 +18,8 @@ import { StyledInternalLink } from '../../theme'
 import { currencyId } from '../../utils/currencyId'
 import AppBody from '../AppBody'
 import { Dots } from '../Pool/styleds'
+import { useTranslation } from 'react-i18next'
+
 
 enum Fields {
   TOKEN0 = 0,
@@ -33,6 +35,7 @@ export default function PoolFinder() {
   const [currency0, setCurrency0] = useState<Currency | null>(ETHER)
   const [currency1, setCurrency1] = useState<Currency | null>(null)
 
+  const {t} = useTranslation();
   const [pairState, pair] = usePair(currency0 ?? undefined, currency1 ?? undefined)
   const addPair = usePairAdder()
   useEffect(() => {
@@ -72,8 +75,8 @@ export default function PoolFinder() {
     <LightCard padding="45px 10px">
       <Text textAlign="center">
         {!account ? 
-        'Connect to a wallet to find pools' : 
-        'Select a token to find your liquidity.'
+        t('connectfindpools') : 
+        t('selectTokenCont')
         }
       </Text>
     </LightCard>
@@ -98,7 +101,8 @@ export default function PoolFinder() {
             </Row>
           ) : (
             <Text fontWeight={500} fontSize={20} marginLeft={'12px'}>
-              Select a Token
+              {/* Select a Token */}
+              {t('selectToken')}
             </Text>
           )}
         </ButtonDropdownLight>
@@ -122,7 +126,7 @@ export default function PoolFinder() {
             </Row>
           ) : (
             <Text fontWeight={500} fontSize={20} marginLeft={'12px'}>
-              Select a Token
+              {t('selectToken')}
             </Text>
           )}
         </ButtonDropdownLight>

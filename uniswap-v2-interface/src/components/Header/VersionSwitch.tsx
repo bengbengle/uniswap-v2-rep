@@ -6,6 +6,8 @@ import useParsedQueryString from '../../hooks/useParsedQueryString'
 import useToggledVersion, { Version } from '../../hooks/useToggledVersion'
 import { MouseoverTooltip } from '../Tooltip'
 
+import { useTranslation } from 'react-i18next'
+
 const VersionLabel = styled.span<{ enabled: boolean }>`
   padding: 0.35rem 0.6rem;
   border-radius: 12px;
@@ -22,7 +24,7 @@ const VersionLabel = styled.span<{ enabled: boolean }>`
 
 enum I18 {
   opt1 = 'en',
-  opt2 = 'zh-CN'
+  opt2 = 'zh-TW'
 }
 
 interface VersionToggleProps extends React.ComponentProps<typeof Link> {
@@ -50,7 +52,7 @@ export default function VersionSwitch() {
   const location = useLocation()
   const query = useParsedQueryString()
   
-  const versionSwitchAvailable = location.pathname === '/swap' || location.pathname === '/send'
+  const versionSwitchAvailable = true;// location.pathname === '/swap' || location.pathname === '/send'
 
   const version = localStorage.getItem('i18nextLng')
 
@@ -72,7 +74,7 @@ export default function VersionSwitch() {
 
   const switchLang = () => {
     let i18 = localStorage.getItem('i18nextLng');
-    if(i18 == 'en') localStorage.setItem('i18nextLng', 'zh-CN')
+    if(i18 == 'en') localStorage.setItem('i18nextLng', 'zh-TW')
     else localStorage.setItem('i18nextLng', 'en')
     window.location.reload()
   }
@@ -80,7 +82,7 @@ export default function VersionSwitch() {
   const toggle = (
     <VersionToggle enabled={versionSwitchAvailable} to={toggleDest} onClick={switchLang}>
       <VersionLabel enabled={version === I18.opt1 || !versionSwitchAvailable}>En</VersionLabel>
-      <VersionLabel enabled={version === I18.opt2 && versionSwitchAvailable}>中</VersionLabel>
+      <VersionLabel enabled={version === I18.opt2 && versionSwitchAvailable}>繁</VersionLabel>
     </VersionToggle>
   )
   return versionSwitchAvailable ? (

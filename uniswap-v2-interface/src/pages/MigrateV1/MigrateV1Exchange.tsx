@@ -60,6 +60,10 @@ export function V1LiquidityInfo({
 }) {
   const { chainId } = useActiveWeb3React()
 
+  let BNB: any = Currency.ETHER
+  BNB.name = "BNB"
+  BNB.symbol = "BNB"
+
   return (
     <>
       <AutoRow style={{ justifyContent: 'flex-start', width: 'fit-content' }}>
@@ -91,7 +95,7 @@ export function V1LiquidityInfo({
           <Text fontSize={16} fontWeight={500} marginLeft={'6px'}>
             <FormattedPoolCurrencyAmount currencyAmount={ethWorth} />
           </Text>
-          <CurrencyLogo size="20px" style={{ marginLeft: '8px' }} currency={Currency.ETHER} />
+          <CurrencyLogo size="20px" style={{ marginLeft: '8px' }} currency={BNB} />
         </RowFixed>
       </RowBetween>
     </>
