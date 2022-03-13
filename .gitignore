@@ -1,15 +1,37 @@
-**/node_modules
+# See https://help.github.com/ignore-files/ for more about ignoring files.
 
-#Hardhat files
-**/cache/
-**/artifacts/
-**/.history/
-**/test.js
-**/yarn-error.log
-**/typechain/
-**/.openzeppelin/
-**/coverage/
-**/sdk/tsconfig.tsbuildinfo
-**/sdk/dist/
-**/logs/
-**/envs/
+# dependencies
+/node_modules
+
+# testing
+/coverage
+
+# production
+/build
+
+# misc
+.DS_Store
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+
+/.netlify
+
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+notes.txt
+.idea/
+
+.vscode/
+
+package-lock.json
+
+cypress/videos
+cypress/screenshots
+cypress/fixtures/example.json
+
+
+uniswap-v2-interface
