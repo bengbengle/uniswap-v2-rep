@@ -42,6 +42,8 @@ import { useWalletModalToggle } from '../../state/application/hooks'
 import { useUserDeadline, useUserSlippageTolerance } from '../../state/user/hooks'
 import { BigNumber } from '@ethersproject/bignumber'
 
+import { useTranslation } from 'react-i18next'
+
 export default function RemoveLiquidity({
   history,
   match: {
@@ -364,8 +366,11 @@ export default function RemoveLiquidity({
         </RowBetween>
 
         <TYPE.italic fontSize={12} color={theme.text2} textAlign="left" padding={'12px 0 0 0'}>
-          {`Output is estimated. If the price changes by more than ${allowedSlippage /
-            100}% your transaction will revert.`}
+{/* 
+            Output is estimated. If the price changes by more 
+than 0.5% your transaction will revert. */}
+          {t('tip11') `${allowedSlippage /
+            100}`}{t('tip12')}
         </TYPE.italic>
       </AutoColumn>
     )
@@ -376,7 +381,7 @@ export default function RemoveLiquidity({
       <>
         <RowBetween>
           <Text color={theme.text2} fontWeight={500} fontSize={16}>
-            {'UNI ' + currencyA?.symbol + '/' + currencyB?.symbol} Burned
+            {'UNI ' + currencyA?.symbol + '/' + currencyB?.symbol} {t('Burned')}
           </Text>
           <RowFixed>
             <DoubleCurrencyLogo currency0={currencyA} currency1={currencyB} margin={true} />
@@ -466,6 +471,7 @@ export default function RemoveLiquidity({
     liquidityPercentChangeCallback
   )
 
+  const { t } = useTranslation()
   return (
     <>
       <AppBody>
@@ -478,7 +484,7 @@ export default function RemoveLiquidity({
             hash={txHash ? txHash : ''}
             content={() => (
               <ConfirmationModalContent
-                title={'You will receive'}
+                title={t('You_will_receive')}
                 onDismiss={handleDismissConfirmation}
                 topContent={modalHeader}
                 bottomContent={modalBottom}
@@ -643,7 +649,9 @@ export default function RemoveLiquidity({
             )}
             <div style={{ position: 'relative' }}>
               {!account ? (
-                <ButtonLight onClick={toggleWalletModal}>Connect Wallet</ButtonLight>
+                <ButtonLight onClick={toggleWalletModal}>
+                  {t('connectWallet')}
+                </ButtonLight>
               ) : (
                 <RowBetween>
                   <ButtonConfirmed

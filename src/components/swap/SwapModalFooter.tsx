@@ -19,6 +19,7 @@ import FormattedPriceImpact from './FormattedPriceImpact'
 import { StyledBalanceMaxMini, SwapCallbackError } from './styleds'
 
 // import { JSBI, Percent, Trade, TradeType } from '@benboba790111/uniswap-v2-sdk'
+import { useTranslation } from 'react-i18next'
 
 export default function SwapModalFooter({
   trade,
@@ -50,6 +51,7 @@ export default function SwapModalFooter({
   let minput = slippageAdjustedAmounts[Field.INPUT]?.toSignificant(4)
   console.log('output::', output)
   console.log('input:', minput)
+  const { t } = useTranslation()
   
   return (
     <>
@@ -109,7 +111,8 @@ export default function SwapModalFooter({
         <RowBetween>
           <RowFixed>
             <TYPE.black fontSize={14} fontWeight={400} color={theme.text2}>
-              Liquidity Provider Fee
+              {/* Liquidity Provider Fee */}
+              {t('Liquidity_Provider_Fee')}
             </TYPE.black>
             <QuestionHelper text="A portion of each trade (0.30%) goes to liquidity providers as a protocol incentive." />
           </RowFixed>

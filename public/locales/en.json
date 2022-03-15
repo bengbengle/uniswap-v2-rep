@@ -50,6 +50,7 @@
   "willReceive": "will receive at least",
   "to": "to",
   "addLiquidity": "Add Liquidity",
+  "RemoveLiquidity":"Remove Liquidity",
   "deposit": "Deposit",
   "currentPoolSize": "Current Pool Size",
   "yourPoolShare": "Your Pool Share",
@@ -90,11 +91,11 @@
   "toleranceExplanation": "Lowering this limit decreases your risk of frontrunning. However, this makes more likely that your transaction will fail due to normal price movements.",
   "tokenSearchPlaceholder": "Search name or paste address",
 
-  "copytext": "Copy Share Link Address",
+  "copytext": "Copy  invitation link",
   "enterAmount": "Enter an amount",
 
   "enterRecipient": "Enter a recipient",
-  "connectWallet":"Connect to a wallet",
+  "connectWallet":"Connect Wallet",
    "connectfindpools":  "Connect to a wallet to find pools",
 
   "slippageTolerance": "Slippage Tolerance",
@@ -126,7 +127,31 @@
   
   "invalidpair": "Invalid Pair",
   "connectNetwork": "Please connect to the appropriate BSC network.",
-  "minutes": "minutes"
+  "minutes": "minutes",
   
 
+  "Your_transaction_may_fail":"Your transaction may fail",
+  "Your_transaction_may_be_frontrun": "Your transaction may be frontrun",
+  "Interface_Settings": "Interface Settings",
+  "from": "From",
+  "To": "To",
+  "TokenName": "TokenName",
+  "Createpool": "Createpool",
+  "Foundbyaddress": "Foundby address",
+  "Add": "(Add)",
+  "Share_of_Pool": "Share of Pool",
+  "Burned": "Burned",
+  "tip11": "Output is estimated. If the price changes by more than ",
+  "tip12": "% your transaction will revert.",
+  "You_will_receive":"You will receive",
+  "Your_position": "Your position",
+  "Simple":"Simple",
+  "Detailed": "Detailed",
+  "Amount": "Amount",
+  "Dismiss":"Dismiss",
+  "Error":"Error",
+  "tip14": "Output is estimated. You will receive at least",
+  "tip15": "Input is estimated. You will sell at most ",
+  "Confirm_Swap": "Confirm Swap",
+  "Liquidity_Provider_Fee":"Liquidity Provider Fee"
 }

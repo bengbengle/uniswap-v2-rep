@@ -95,7 +95,7 @@ export function AddRemoveTabs({ adding }: { adding: boolean }) {
         <HistoryLink to="/pool">
           <StyledArrowLeft />
         </HistoryLink>
-        <ActiveText>{adding ? 'Add' : 'Remove'} Liquidity</ActiveText>
+        <ActiveText>{adding ? t('addLiquidity')  : t('RemoveLiquidity') } </ActiveText>
         <QuestionHelper
           text={
             adding

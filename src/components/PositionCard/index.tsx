@@ -20,6 +20,7 @@ import CurrencyLogo from '../CurrencyLogo'
 import DoubleCurrencyLogo from '../DoubleLogo'
 import { AutoRow, RowBetween, RowFixed } from '../Row'
 import { Dots } from '../swap/styleds'
+import { useTranslation } from 'react-i18next'
 
 export const FixedHeightRow = styled(RowBetween)`
   height: 24px;
@@ -48,6 +49,7 @@ export function MinimalPositionCard({ pair, showUnwrapped = false, border }: Pos
 
   const userPoolBalance = useTokenBalance(account ?? undefined, pair.liquidityToken)
   const totalPoolTokens = useTotalSupply(pair.liquidityToken)
+  const { t } = useTranslation()
 
   const [token0Deposited, token1Deposited] =
     !!pair &&
@@ -69,7 +71,7 @@ export function MinimalPositionCard({ pair, showUnwrapped = false, border }: Pos
             <FixedHeightRow>
               <RowFixed>
                 <Text fontWeight={500} fontSize={16}>
-                  Your position
+                  {t('Your_position')}
                 </Text>
               </RowFixed>
             </FixedHeightRow>

@@ -173,9 +173,7 @@ export function useSwapCallback(
                         errorMessage = t('errormsg1')// 'This transaction will not succeed either due to price movement or fee on transfer. Try increasing your slippage tolerance.'
                         break
                       default:
-                        errorMessage = `The transaction cannot succeed due to error: 
-                        ${callError.reason}. 
-                        This is probably an issue with one of the tokens you are swapping.`
+                        errorMessage = ` ${callError.reason}. `
                     }
                     return { call, error: new Error(errorMessage) }
                   })

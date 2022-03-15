@@ -6,6 +6,7 @@ import TransactionConfirmationModal, {
 } from '../TransactionConfirmationModal'
 import SwapModalFooter from './SwapModalFooter'
 import SwapModalHeader from './SwapModalHeader'
+import { useTranslation } from 'react-i18next'
 
 /**
  * Returns true if the trade requires a confirmation of details before we can submit it
@@ -76,6 +77,7 @@ export default function ConfirmSwapModal({
     ) : null
   }, [allowedSlippage, onConfirm, showAcceptChanges, swapErrorMessage, trade])
 
+  const { t } = useTranslation()
   // text to show while loading
   const pendingText = `Swapping ${trade?.inputAmount?.toSignificant(6)} ${
     trade?.inputAmount?.currency?.symbol
@@ -87,7 +89,7 @@ export default function ConfirmSwapModal({
         <TransactionErrorContent onDismiss={onDismiss} message={swapErrorMessage} />
       ) : (
         <ConfirmationModalContent
-          title="Confirm Swap"
+          title={t("Confirm_Swap")}
           onDismiss={onDismiss}
           topContent={modalHeader}
           bottomContent={modalBottom}

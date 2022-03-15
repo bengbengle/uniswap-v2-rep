@@ -77,7 +77,7 @@
   "enterTokenCont": "輸入代幣地址",
 
   
-  "copytext": "複制邀請地址",
+  "copytext": "複製邀請鏈接",
   "enterAmount": "輸入金額",
 
   "enterRecipient": "輸入接收地址",
@@ -85,7 +85,7 @@
   
   "connectfindpools":  "連接錢包發現池子",
   
-  "slippageTolerance": "滑點容差",
+  "slippageTolerance": "滑動公差",
   "transactionDeadline" :"交易截止日期",
   "createLiquidity": "創建流動性",
   "errormsg1": "由于價格變動或轉讓費用，此交易將不會成功。嘗試增加您的滑點容限",
@@ -107,5 +107,36 @@
   "TransactionSettings": "交易設置",
   "ImportPool": "交易設置",
   "invalidpair": "無效交易對",
-  "minutes": "分钟"
+  "minutes": "分钟",
+
+
+  "Your_transaction_may_fail":"您的交易可能會失敗",
+  "Your_transaction_may_be_frontrun":"您的交易可能會抢先",
+  "Interface_Settings": "接口設置",
+  "from": "從",
+  "To": "到",
+  "TokenName": "令牌名稱",
+  "Createpool": "创建交易池",
+  "Foundbyaddress": "通過地址找到",
+  "Add": "（添加）",
+  "Share_of_Pool": "池份額",
+  "Burned": "燒毀",
+  
+  
+  "tip11": "估計輸出。 如果價格變化更多 超过",
+  "tip12": "% 您的交易將恢復。",
+  "You_will_receive":"您將收到",
+  "Your_position": "您現在的位置",
+  "Simple":"簡單的",
+  "Detailed": "詳細的",
+  "Amount":"數量",
+  "Dismiss":"解僱",
+  "Error":"錯誤",
+  "tip14": "估計輸出。 您將收到至少",
+  "tip15":"由於錯誤，事務無法成功：不明確的。",
+  "Confirm_Swap": "確認交換",
+  "RemoveLiquidity":"移除流動性資金",
+  "Liquidity_Provider_Fee": "流動性提供者費用"
+
+
 }

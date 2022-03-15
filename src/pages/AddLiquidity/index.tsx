@@ -38,6 +38,8 @@ import { ConfirmAddModalBottom } from './ConfirmAddModalBottom'
 import { currencyId } from '../../utils/currencyId'
 import { PoolPriceBar } from './PoolPriceBar'
 
+import { useTranslation } from 'react-i18next'
+
 export default function AddLiquidity({
   match: {
     params: { currencyIdA, currencyIdB }
@@ -304,6 +306,9 @@ export default function AddLiquidity({
     setTxHash('')
   }, [onFieldAInput, txHash])
 
+
+  const { t } = useTranslation()
+  
   return (
     <>
       <AppBody>
@@ -390,7 +395,7 @@ export default function AddLiquidity({
             )}
 
             {!account ? (
-              <ButtonLight onClick={toggleWalletModal}>Connect Wallet</ButtonLight>
+              <ButtonLight onClick={toggleWalletModal}> {t('connectWallet')} </ButtonLight>
             ) : (
               <AutoColumn gap={'md'}>
                 {(approvalA === ApprovalState.NOT_APPROVED ||
