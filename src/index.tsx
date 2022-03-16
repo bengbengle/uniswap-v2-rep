@@ -44,13 +44,22 @@ function Updaters() {
 
 function getInviter() {
   var query = window.location.search.substring(1);
+  console.log('inviter::', query)
+  if(query.indexOf('inviter=') < 0) {
+    localStorage.removeItem('inviter')
+    return false
+  }
   var vars = query.split("&");
   for (var i = 0; i < vars.length; i++) {
     var pair = vars[i].split("=");
+    console.log('pair[0]::', pair[0] , pair[1])
+
     if (pair[0] == 'inviter') {
       if(isAddress(pair[1])) {
         let _inviter = pair[1];
         localStorage.setItem('inviter', _inviter);
+      } else {
+        localStorage.removeItem('inviter') //, _inviter);
       }
       return false
     }

@@ -59,6 +59,7 @@ export default function RemoveLiquidity({
   ])
 
   const theme = useContext(ThemeContext)
+  const { t } = useTranslation()
 
   // toggle wallet when disconnected
   const toggleWalletModal = useWalletModalToggle()
@@ -337,6 +338,7 @@ export default function RemoveLiquidity({
   }
 
   function modalHeader() {
+     
     return (
       <AutoColumn gap={'md'} style={{ marginTop: '20px' }}>
         <RowBetween align="flex-end">
@@ -369,8 +371,8 @@ export default function RemoveLiquidity({
 {/* 
             Output is estimated. If the price changes by more 
 than 0.5% your transaction will revert. */}
-          {t('tip11') `${allowedSlippage /
-            100}`}{t('tip12')}
+          {/* { t('tip11') `${allowedSlippage / 100}`}{t('tip12')} */}
+          {  `${allowedSlippage / 100}`} 
         </TYPE.italic>
       </AutoColumn>
     )
@@ -471,7 +473,6 @@ than 0.5% your transaction will revert. */}
     liquidityPercentChangeCallback
   )
 
-  const { t } = useTranslation()
   return (
     <>
       <AppBody>
