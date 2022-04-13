@@ -1,8 +1,6 @@
 {
   "name": "uniswap-v2-interface",
   "description": "Uniswap Interface",
-  "repository": "https://github.com/bengbengle/uniswap-v2-interface.git",
-  "homepage": "https://bengbengle.github.io/uniswap-v2-interface",
   "private": true,
   "devDependencies": {
     "@ethersproject/experimental": "^5.0.1",
