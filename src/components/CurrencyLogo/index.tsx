@@ -7,8 +7,7 @@ import useHttpLocations from '../../hooks/useHttpLocations'
 import { WrappedTokenInfo } from '../../state/lists/hooks'
 import Logo from '../Logo'
 
-const getTokenLogoURL = (address: string) =>
-  `/uniswap-v2-interface/tokens/${address}.png`
+const getTokenLogoURL = (address: string) => `/images/${address.toLocaleLowerCase()}.png`
 
 const StyledEthereumLogo = styled.img<{ size: string }>`
   width: ${({ size }) => size};
