@@ -6,9 +6,9 @@ import { Text } from 'rebass'
 import styled from 'styled-components'
 
 import Logo from '../../assets/svg/logo.svg'
-import LogoDark from '../../assets/svg/logo_white.svg'
+import LogoDark from '../../assets/svg/logo_white.png'
 import Wordmark from '../../assets/svg/wordmark.svg'
-import WordmarkDark from '../../assets/svg/wordmark_white.svg'
+import WordmarkDark from '../../assets/svg/wordmark_white.png'
 import { useActiveWeb3React } from '../../hooks'
 import { useDarkModeManager } from '../../state/user/hooks'
 import { useETHBalances } from '../../state/wallet/hooks'
@@ -150,15 +150,11 @@ export default function Header() {
         <HeaderElement>
           <Title href=".">
             <UniIcon>
-              <img src={isDark ? LogoDark : Logo} alt="logo" />
+              <img style={{ maxHeight:'32px', maxWidth: '32px' }} src={isDark ? LogoDark : Logo} alt="logo" />
             </UniIcon>
             <TitleText>
-              <img style={{ marginLeft: '4px', marginTop: '4px' }} src={
-                isDark ? 
-                WordmarkDark 
-                : 
-                Wordmark
-                } alt="logo" />
+              <img style={{ marginLeft: '4px', marginTop: '4px', maxHeight:'20px', maxWidth: '110px' }} src={
+                isDark ? WordmarkDark : Wordmark } alt="logo" />
             </TitleText>
           </Title>
         </HeaderElement>
