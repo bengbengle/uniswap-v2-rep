@@ -1,6 +1,6 @@
 {
   "name": "uniswap-v2-interface",
-  "description": "Uniswap Interface",
+  "description": "Statfish Swap",
   "private": true,
   "devDependencies": {
     "@ethersproject/experimental": "^5.0.1",

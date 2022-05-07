@@ -18,26 +18,26 @@ var providers = require('@ethersproject/providers');
 var IUniswapV2Pair = _interopDefault(require('@uniswap/v2-core/build/IUniswapV2Pair.json'));
 
 var deploymentData = {
-	"97": {
+	"56": {
 	weth: {
-		proxyAddress: "0xae13d989daC2f0dEbFf460aC112a837C89BAa7cd",
-		implAddress: "0xae13d989daC2f0dEbFf460aC112a837C89BAa7cd",
+		proxyAddress: "0xbb4CdB9CBd36B01bD1cBaEBF2De08d9173bc095c",
+		implAddress: "0xbb4CdB9CBd36B01bD1cBaEBF2De08d9173bc095c",
 		version: "1.0.0",
 		contract: "WETH9",
 		operator: "0x8368beeeedec26444e7393a6a572137c1d2b9b8d",
 		fromBlock: 16719419
 	},
 	factory: {
-		proxyAddress: "0xab6376de77978d29f52f2916f72b4d3639011c24",
-		implAddress: "0xab6376de77978d29f52f2916f72b4d3639011c24",
+		proxyAddress: "0x7866feF264f83Ac945A159cB8E8aa34E21a14F0A",
+		implAddress: "0x7866feF264f83Ac945A159cB8E8aa34E21a14F0A",
 		version: "1.0.0",
 		contract: "UniswapV2Factory",
 		operator: "0x8368beeeedec26444e7393a6a572137c1d2b9b8d",
 		fromBlock: 16719531
 	},
 	router: {
-		proxyAddress: "0xda333155a51297bbd46d323578eb684645b56d06",
-		implAddress: "0xda333155a51297bbd46d323578eb684645b56d06",
+		proxyAddress: "0xc2cc18617F5f9D08914B7b1CB209e663F55d4AF8",
+		implAddress: "0xc2cc18617F5f9D08914B7b1CB209e663F55d4AF8",
 		version: "1.0.0",
 		contract: "UniswapV2Router02",
 		operator: "0x8368beeeedec26444e7393a6a572137c1d2b9b8d",
@@ -56,7 +56,7 @@ var _SOLIDITY_TYPE_MAXIMA;
   // RINKEBY = 4,
   // GÖRLI = 5,
   // KOVAN = 42,
-  ChainId[ChainId["BSC_TESTNET"] = 97] = "BSC_TESTNET";
+  ChainId[ChainId["BSC_TESTNET"] = 56] = "BSC_TESTNET";
 })(exports.ChainId || (exports.ChainId = {}));
 
 (function (TradeType) {
@@ -71,7 +71,7 @@ var _SOLIDITY_TYPE_MAXIMA;
 })(exports.Rounding || (exports.Rounding = {}));
 
 var FACTORY_ADDRESS = DeploymentInfo[exports.ChainId.BSC_TESTNET].factory.proxyAddress;
-var INIT_CODE_HASH = '0x5bfa01b77eec506e2638589f64935f48029004aabe3aeec2a4121ef69f842e6f';
+var INIT_CODE_HASH = '0x7342f8fffb6a06e034669e0fce7449cc129c8eb5d4ac012869be5da848e4fb3e';
 var MINIMUM_LIQUIDITY = /*#__PURE__*/JSBI.BigInt(1000); // exports for internal consumption
 
 var ZERO = /*#__PURE__*/JSBI.BigInt(0);

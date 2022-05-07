@@ -1,4 +1,4 @@
-# Uniswap Interface
+# Statfish Swap
 
 ## 点击这里访问 [https://33357.github.io/uniswap-v2-interface](https://33357.github.io/uniswap-v2-interface)
 
@@ -16,9 +16,9 @@ An open source interface for Uniswap -- a protocol for decentralized exchange of
 - Discord: [Uniswap](https://discord.gg/Y7TF6QA)
 - Whitepaper: [Link](https://hackmd.io/C-DvwDSfSxuh-Gd4WKE_ig)
 
-## Accessing the Uniswap Interface
+## Accessing the Statfish Swap
 
-To access the Uniswap Interface, use an IPFS gateway link from the
+To access the Statfish Swap, use an IPFS gateway link from the
 [latest release](https://github.com/Uniswap/uniswap-interface/releases/latest), 
 or visit [app.uniswap.org](https://app.uniswap.org).
 
@@ -60,8 +60,8 @@ The interface will not work on other networks.
 **Please open all pull requests against the `master` branch.** 
 CI checks will run against all PRs.
 
-## Accessing Uniswap Interface V1
+## Accessing Statfish Swap V1
 
-The Uniswap Interface supports swapping against, and migrating or removing liquidity from Uniswap V1. However,
+The Statfish Swap supports swapping against, and migrating or removing liquidity from Uniswap V1. However,
 if you would like to use Uniswap V1, the Uniswap V1 interface for mainnet and testnets is accessible via IPFS gateways 
 linked from the [v1.0.0 release](https://github.com/Uniswap/uniswap-interface/releases/tag/v1.0.0).

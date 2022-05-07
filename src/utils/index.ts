@@ -23,11 +23,11 @@ const ETHERSCAN_PREFIXES: { [chainId in ChainId]: string } = {
   // 4: 'rinkeby.',
   // 5: 'goerli.',
   // 42: 'kovan.',
-  97: 'bsc_testnet.'
+  56: 'bsc.'
 }
 
 export function getEtherscanLink(chainId: ChainId, data: string, type: 'transaction' | 'token' | 'address'): string {
-  const prefix = chainId === ChainId.BSC_TESTNET ? 'https://testnet.bscscan.com/' : `https://${ETHERSCAN_PREFIXES[chainId] || "" }etherscan.io`
+  const prefix = chainId === ChainId.BSC_TESTNET ? 'https://bscscan.com/' : `https://${ETHERSCAN_PREFIXES[chainId] || "" }etherscan.io`
 
   switch (type) {
     case 'transaction': {

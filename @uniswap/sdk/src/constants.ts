@@ -9,7 +9,7 @@ export enum ChainId {
   // RINKEBY = 4,
   // GÖRLI = 5,
   // KOVAN = 42,
-  BSC_TESTNET = 97
+  BSC_TESTNET = 56,
 }
 
 export enum TradeType {
@@ -25,7 +25,7 @@ export enum Rounding {
 
 export const FACTORY_ADDRESS = DeploymentInfo[ChainId.BSC_TESTNET].factory.proxyAddress
 
-export const INIT_CODE_HASH = '0x5bfa01b77eec506e2638589f64935f48029004aabe3aeec2a4121ef69f842e6f'
+export const INIT_CODE_HASH = '0x7342f8fffb6a06e034669e0fce7449cc129c8eb5d4ac012869be5da848e4fb3e'
 
 export const MINIMUM_LIQUIDITY = JSBI.BigInt(1000)
 

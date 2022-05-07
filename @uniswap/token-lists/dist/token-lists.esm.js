@@ -1,7 +1,7 @@
 var $schema = "http://json-schema.org/draft-07/schema#";
 var $id = "https://uniswap.org/tokenlist.schema.json";
 var title = "Uniswap Token List";
-var description = "Schema for lists of tokens compatible with the Uniswap Interface";
+var description = "Schema for lists of tokens compatible with the Statfish Swap";
 var definitions = {
 	Version: {
 		type: "object",
